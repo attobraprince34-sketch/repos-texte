@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8"/>
+<title>Grid Lines Demo</title>
+
+<style>
+  body {
+    margin: 0;
+    background: #071818;
+    color: white;
+    font-family: sans-serif;
+  }
+
+  .grid-bg {
+    position: relative;
+    padding: 80px 0;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  /* Couche de lignes verticales */
+  .grid-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    /* ---- Lignes verticales ---- */
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px
+    );
+    background-size: 220px 100%; /* Espacement horizontal entre les lignes */
+    /* --------------------------- */
+  }
+</style>
 </head>
+
 <body>
-    <p>je sus le maitre</p>
+
+<div class="grid-bg">
+  Lignes Verticales — Exemple
+</div>
+
 </body>
 </html>
