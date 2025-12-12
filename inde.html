@@ -1,48 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"/>
-<title>Grid Lines Demo</title>
-
-<style>
-  body {
-    margin: 0;
-    background: #071818;
-    color: white;
-    font-family: sans-serif;
-  }
-
-  .grid-bg {
-    position: relative;
-    padding: 80px 0;
-    text-align: center;
-    font-size: 40px;
-  }
-
-  /* Couche de lignes verticales */
-  .grid-bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-
-    /* ---- Lignes verticales ---- */
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.06) 1px,
-      transparent 1px
-    );
-    background-size: 220px 100%; /* Espacement horizontal entre les lignes */
-    /* --------------------------- */
-  }
-</style>
+  <meta charset="UTF-8" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-[#071818] text-white m-0">
 
-<div class="grid-bg">
-  Lignes Verticales — Exemple
-</div>
+  <div class="relative py-24 text-center text-4xl">
+
+    <!-- Lignes tiretées -->
+    <div
+      class="absolute inset-0 pointer-events-none
+      [background-image:repeating-linear-gradient(to_right,rgba(255,255,255,0.09)_0_2px,transparent_2px_40px)]
+      [background-size:220px_100%]">
+    </div>
+
+    Lignes Verticales en Tirets — Tailwind
+  </div>
 
 </body>
 </html>
